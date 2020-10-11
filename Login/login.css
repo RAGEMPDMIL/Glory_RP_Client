@@ -1,0 +1,64 @@
+body {
+    padding: unset;
+    margin: unset;
+    font-family: 'Open Sans', sans-serif;;
+}
+
+.material-icons {
+    font-size: 22px;
+}
+
+.page-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.login-input {
+    position: relative;
+    padding: 20px;
+    width: 200px;
+    display: flex;
+}
+
+.login-input input {
+    width: 200px;
+    border-top: unset;
+    border-right: unset;
+    border-left: unset;
+    background-color: unset;
+    text-indent: 25px;
+}
+
+.login-input i {
+    position: absolute;
+    bottom: 22px;
+}
+
+.login-button {
+    padding: 10px;
+    width: 200px;
+}
+
+.login-button button {
+    width: 200px;
+    height: 35px;
+    background-color: #2095f2;
+    color: white;
+    border: unset;
+}
