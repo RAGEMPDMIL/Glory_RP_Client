@@ -1,0 +1,24 @@
+{
+  "name": "dm_il_client",
+  "version": "0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/ragemp-c": "github:CocaColaBear/types-ragemp-c#master",
+    "@types/ragemp-s": "github:CocaColaBear/types-ragemp-s#master"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RAGEMPDMIL/DM_IL_Client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RAGEMPDMIL/DM_IL_Client/issues"
+  },
+  "homepage": "https://github.com/RAGEMPDMIL/DM_IL_Client#readme"
+}
