@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/general.css">
+    <link rel="stylesheet" href="../../login/UI/login.css">
+    <link rel="stylesheet" href="registration.css">
+    <title>Registration Form</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="authentication-form" style="height: 700px;">
+            <div class="authentication-form-header" style="font-size: large; font-weight: bold;">Sign Up To Start Your Life 
+                <hr class="style-eight">
+            </div>
+            
+            <div class="authentication-input">
+                <i class="material-icons">person_outlined</i>
+                <input type="text" required tabindex="1" id="login">
+                <span class="authentication-input-placeholder">UserName</span>
+            </div>
+            <div class="authentication-input">
+                <i class="material-icons">alternate_email</i>
+                <input type="email" required tabindex="2" id="email">
+                <span class="authentication-input-placeholder">Email</span>
+            </div>
+            <div class="authentication-input">
+                <i class="material-icons">lock_outlined</i>
+                <input type="text" required tabindex="3" id="password">
+                <span class="authentication-input-placeholder">Password</span>
+            </div>
+            <div class="authentication-input">
+                <i class="material-icons">done_outline</i>
+                <input type="password" required tabindex="4" id="passwordConfirmation">
+                <span class="authentication-input-placeholder">Confirm Password</span>
+            </div>
+            <div class="authentication-button">
+                <button tabindex="5">SignUp</button>
+            </div>
+            <div class="authentication-button">
+                <button tabindex="6">Already Registed?</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="registration.js"></script>
+</body>
+</html>
