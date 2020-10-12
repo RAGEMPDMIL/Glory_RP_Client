@@ -93,6 +93,20 @@ button:hover {
       border-color: #2095f2;
   }
 
+  .authentication-small-button {
+      padding-top: 20px;
+      font-size: 14px;
+      color: rgb(168, 168, 168);
+      transition: color 0.3s;
+  }
+
+  .authentication-small-button:hover {
+    padding-top: 20px;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+}
+
   .authentication-input input:focus ~ .authentication-input-placeholder,
   .authentication-input input:valid ~ .authentication-input-placeholder {
     top: 0px;
