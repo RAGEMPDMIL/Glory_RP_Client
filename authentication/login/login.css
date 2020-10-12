@@ -27,6 +27,7 @@
 .login-input {
     position: relative;
     padding: 20px;
+    padding-bottom: 30px;
     width: 300px;
     display: flex;
 }
@@ -43,11 +44,11 @@
 
 .login-input i {
     position: absolute;
-    bottom: 25px;
+    bottom: 33px;
 }
 
 .login-button {
-    padding-top: 50px;
+    padding-top: 40px;
     width: 300px;
 }
 
@@ -75,7 +76,7 @@
 
   .login-input input:focus ~ .ipnut-placeholder,
   .login-input input:valid ~ .ipnut-placeholder {
-    top: 5px;
+    top: 2px;
     bottom: 10px;
     left: 50px;
     font-size: 11px;
