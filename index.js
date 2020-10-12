@@ -1,2 +1,2 @@
-require('./authentication/events/authEvents');
-require('./authentication/login/Client/login');
+require('./DM_IL_Client/authentication/login/events/login.events');
+require('./DM_IL_Client/authentication/events/auth.events');
