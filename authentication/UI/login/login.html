@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../style/general.css">
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="../../registration/UI/registration.css">
+    <link rel="stylesheet" href="../style/general.css">
+    <link rel="stylesheet" href="./login.css">
     <title>Login</title>
 </head>
 <body>
     <div class="page-container">
         <div class="authentication-form">
             <span class="authentication-form-header">Login Your Account
-                <hr class="style-eight">
             </span>
+            <div class="divider"></div>
             <div class="authentication-input">
                 <i class="material-icons">person_outlined</i>
-                <input type="text" required tabindex="1" id="login">
+                <input type="text" required tabindex="1" id="username">
                 <span class="authentication-input-placeholder">Login</span>
             </div>
-            <div class="authentication-input">
-                <i class="material-icons">lock_outlined</i>
+            <div class="authentication-input" style="padding-bottom: 10px;">
+                <i class="material-icons" style="bottom: 14px;">lock_outlined</i>
                 <input type="password" required tabindex="2" id="password">
                 <span class="authentication-input-placeholder">Password</span>
             </div>
+            <span class="authentication-small-link align-start">Forgot password?</span>
             <div class="authentication-button">
-                <button tabindex="3">Login</button>
+                <button tabindex="3" onclick="submitLogin();">Login</button>
             </div>
+            <span class="authentication-small-button" onclick="showRegisterPage();">Not a member? Signup now</span>
         </div>
     </div>
 

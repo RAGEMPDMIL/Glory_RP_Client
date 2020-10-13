@@ -8,5 +8,5 @@ function submitRegistration(){
 }
 
 function showLoginPage() {
-    mp.trigger('register:ShowLoginPage');
+    mp.trigger('client:register:showLoginPage');
 }

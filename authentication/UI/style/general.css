@@ -1,3 +1,4 @@
+/* ----------------------------------------- Initialzition ------------------------------------------- */
 body {
     padding: unset;
     margin: unset;
@@ -18,7 +19,21 @@ button:hover {
     padding-bottom: 40px;
 }
 
-/* General UI for authentication */
+/* ----------------------------------------------- General ------------------------------------------- */
+.align-start {
+    align-self: flex-start;
+}
+
+/* ----------------------------------------- Authentication UI --------------------------------------- */
+
+.page-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .authentication-form {
     width: 370px;
@@ -116,3 +131,12 @@ button:hover {
     opacity: 1;
     color: black;
   }
+
+  .authentication-small-link {
+    padding-top: 20px;
+    font-size: 14px;
+    color: #2095f2;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------------------------------------------- */
