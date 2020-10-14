@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../style/general.css">
     <link rel="stylesheet" href="./login.css">
     <title>Login</title>
+    <script src="../../../assets/jquery-3.5.1.js"></script>
 </head>
 <body>
     <div class="page-container">
@@ -27,12 +28,23 @@
             </div>
             <span class="authentication-small-link align-start">Forgot password?</span>
             <div class="authentication-button">
-                <button tabindex="3" onclick="submitLogin();">Login</button>
+                <button id="login-button" tabindex="3" onclick="submitLogin();">
+                    <span id="login-span">Login</span>
+                    <div class="authentication-loading-spinner"></div>
+                </button>
             </div>
             <span class="authentication-small-button" onclick="showRegisterPage();">Not a member? Signup now</span>
         </div>
     </div>
 
+    <div class="authentication-modal">
+    <div class="authentication-modal-content">
+        <div class="authentication-modal-header">Error loggin in!</div>
+        <p id="authentication-modal-text">Login denied! please check your credentials.</p>
+    </div>
+  </div>
+
     <script src="./login.js"></script>
 </body>
 </html>
+
