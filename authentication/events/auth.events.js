@@ -56,10 +56,14 @@ mp.events.add('client:auth:showLoginPage', () => {
 });
 
 // Login attempted
-mp.events.add('client:auth:userLogin', (username, password) => {
-    mp.events.callRemote('server:login:userLogin', username, password);
+mp.events.add('client:auth:userLogin', (player, username, password) => {
+    mp.events.callRemote('server:login:userLogin', player ,username, password);
 });
 
+// Register attempted
+mp.events.add('client:register:SubmitRegistration',(username,password,email) =>{
+    mp.events.callRemote('server:register:userRegister',username,password,email);
+})
 
 // login handler
 mp.events.add('client:auth:loginHandler', (handle) => {
@@ -70,11 +74,9 @@ mp.events.add('client:auth:loginHandler', (handle) => {
             mp.events.call('client:auth:hideLoginScreen');
             mp.gui.chat.push('Welcome back to DM_IL');
         }
+        case 'incorrectInfo':
+        {
+            
+        }
     }
 });
-
-
-//submit register
-mp.events.add('client:register:SubmitRegistration',(username,password,email) =>{
-    mp.events.callRemote('server:register:userRegister',username,password,email);
-})

@@ -1,8 +1,16 @@
-function submitLogin() {
-    let username = document.getElementById('username');
-    let password = document.getElementById('password');
+$(document).ready(function() {
+    $('.authentication-loading-spinner').hide();
+});
 
-    mp.trigger('client:auth:userLogin', username.value, password.value);
+function submitLogin() {
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+
+    if(username.length > 0 && password.length > 0) {
+        $('#login-span').hide();
+        $('.authentication-loading-spinner').show();
+        mp.trigger('client:auth:userLogin', username, password);
+    }
 }
 
 function showRegisterPage() {
