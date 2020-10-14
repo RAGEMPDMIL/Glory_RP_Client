@@ -72,3 +72,9 @@ mp.events.add('client:auth:loginHandler', (handle) => {
         }
     }
 });
+
+
+//submit register
+mp.events.add('client:register:SubmitRegistration',(username,password,email) =>{
+    mp.events.callRemote('server:register:userRegister',username,password,email);
+})

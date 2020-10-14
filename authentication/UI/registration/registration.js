@@ -1,10 +1,14 @@
 function submitRegistration(){
-    let login = document.getElementById(login);
-    let password = document.getElementById(password);
-    let passwordConfirmation = (document.getElementById(passwordConfirmation)==password);
-    let email = document.getElementById(email);
-
-    mp.trigger('register:SubmitRegistration', login, password, email);
+    let login = document.getElementById('login');
+    let password = document.getElementById('password');
+    let passwordConfirmation = (document.getElementById('passwordConfirmation').value==password.value);
+    let email = document.getElementById('email');
+    console.log("got all values");
+    if(passwordConfirmation)
+    {
+        console.log("sent to the client side function");
+        mp.trigger('client:register:SubmitRegistration', login.value, password.value, email.value);
+    }
 }
 
 function showLoginPage() {
