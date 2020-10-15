@@ -10,6 +10,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../style/general.css">
     <link rel="stylesheet" href="registration.css">
+    <script src="../../../assets/jquery-3.5.1.js"></script>
     <title>Registration Form</title>
 </head>
 
@@ -41,7 +42,10 @@
                 <span class="authentication-input-placeholder">Confirm Password</span>
             </div>
             <div class="authentication-button">
-                <button tabindex="5" onclick="submitRegistration()">SignUp</button>
+                <button tabindex="5" onclick="submitRegistration()">
+                    <span>Signup</span>
+                    <div class="authentication-loading-spinner"></div>
+                </button>
             </div>
             <span class="authentication-small-button" onclick="showLoginPage();">Already Signed Up?</span>
         </div>
