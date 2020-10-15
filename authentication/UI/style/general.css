@@ -149,17 +149,13 @@ button:hover {
     font-size: 10px;
     padding-left: 20px;
     padding-bottom: 10px;
+    min-width: 120px;
   }
 
   .authentication-error {
     color: red;
   }
-
-  .authentication-input.error input,
-  .authentication-input.error input:focus {
-    border-color:red !important;
-  }
-
+  
   .authentication-small-link {
     font-size: 10px;
     color: #2095f2;
