@@ -68,12 +68,12 @@ mp.events.add('client:auth:SubmitRegistration', (username, password, email) => {
 })
 
 // Login handler
-mp.events.add('client:auth:loginHandler', (handle) => {
+mp.events.add('client:auth:loginHandler', (handle,player) => {
     switch (handle) {
         case 'success': {
             mp.events.call('client:auth:disableCamera');
             mp.events.call('client:auth:hideLoginScreen');
-            mp.gui.chat.push('Welcome back to DM_IL');
+            mp.gui.chat.push(`!{#FB4E4E}Welcome to Israel DeathMatch Server !, ${player.name}!`);
         }
         case 'incorrectInfo':
         {
