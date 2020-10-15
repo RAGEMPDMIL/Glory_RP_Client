@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $('.authentication-loading-spinner').hide();
 });
 
@@ -11,21 +11,19 @@ function submitRegistration() {
     const emailValid = email.checkValidity();
     const passwordValid = password.checkValidity();
 
-    if(!passwordConfirmation) {
-        
+    if (!passwordConfirmation) {
+
     }
 
-    if(!emailValid) {
-    }
+    if (!emailValid) {}
 
-    if(!passwordValid) {
-    }
-    
+    if (!passwordValid) {}
+
     if (passwordConfirmation && emailValid && passwordValid) {
-        mp.trigger('client:register:SubmitRegistration', login.value, password.value, email.value);
+        mp.trigger('client:auth:SubmitRegistration', login.value, password.value, email.value);
     }
 }
-mp.trigger('client:auth:showLoginPage');
 
-    function showLoginPage() {
+function showLoginPage() {
+    mp.trigger('client:auth:showLoginPage');
 }

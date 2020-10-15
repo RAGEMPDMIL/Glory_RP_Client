@@ -21,26 +21,38 @@
             </div>
             <div class="divider"></div>
 
-            <div class="authentication-input">
-                <i class="material-icons">person_outlined</i>
-                <input type="text" required tabindex="1" id="login">
-                <span class="authentication-input-placeholder">UserName</span>
+            <div class="authentication-field-wrapper">
+                <div class="authentication-input">
+                    <i class="material-icons">person_outlined</i>
+                    <input type="text" required tabindex="1" id="login">
+                    <span class="authentication-input-placeholder">UserName</span>
+                </div>
             </div>
-            <div class="authentication-input">
-                <i class="material-icons">alternate_email</i>
-                <input type="email" required tabindex="2" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" id="email">
-                <span class="authentication-input-placeholder">Email</span>
+
+            <div class="authentication-field-wrapper">
+                <div class="authentication-input">
+                    <i class="material-icons">alternate_email</i>
+                    <input type="email" required tabindex="2" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" id="email">
+                    <span class="authentication-input-placeholder">Email</span>
+                </div>
             </div>
-            <div class="authentication-input">
-                <i class="material-icons">lock_outlined</i>
-                <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required tabindex="3" id="password">
-                <span class="authentication-input-placeholder">Password</span>
+
+            <div class="authentication-field-wrapper">
+                <div class="authentication-input">
+                    <i class="material-icons">lock_outlined</i>
+                    <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required tabindex="3" id="password">
+                    <span class="authentication-input-placeholder">Password</span>
+                </div>
             </div>
-            <div class="authentication-input">
-                <i class="material-icons">done_outline</i>
-                <input type="password" required tabindex="4" id="passwordConfirmation">
-                <span class="authentication-input-placeholder">Confirm Password</span>
+
+            <div class="authentication-field-wrapper">
+                <div class="authentication-input">
+                    <i class="material-icons">done_outline</i>
+                    <input type="password" required tabindex="4" id="passwordConfirmation">
+                    <span class="authentication-input-placeholder">Confirm Password</span>
+                </div>
             </div>
+
             <div class="authentication-button">
                 <button tabindex="5" onclick="submitRegistration()">
                     <span>Signup</span>

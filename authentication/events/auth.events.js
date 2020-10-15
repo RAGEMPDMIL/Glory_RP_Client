@@ -1,4 +1,4 @@
-var authBrowser, authCam;
+let authBrowser ,authCam;
 
 mp.events.add('playerReady', () => {
     mp.events.call('client:auth:userConnected');
@@ -63,11 +63,11 @@ mp.events.add('client:auth:userLogin', (player, username, password) => {
 });
 
 // Register attempted
-mp.events.add('client:register:SubmitRegistration',(username,password,email) =>{
-    mp.events.callRemote('server:register:userRegister',username,password,email);
+mp.events.add('client:auth:SubmitRegistration', (username, password, email) => {
+    mp.events.callRemote('server:register:userRegister', username, password, email);
 })
 
-// login handler
+// Login handler
 mp.events.add('client:auth:loginHandler', (handle) => {
     switch (handle) {
         case 'success': {
@@ -83,7 +83,3 @@ mp.events.add('client:auth:loginHandler', (handle) => {
 });
 
 
-//submit register
-mp.events.add('client:register:SubmitRegistration', (username, password, email) => {
-    mp.events.callRemote('server:register:userRegister', username, password, email);
-})
