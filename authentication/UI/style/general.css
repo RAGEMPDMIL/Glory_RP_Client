@@ -148,8 +148,8 @@ button:hover {
   .authentication-hint {
     font-size: 10px;
     padding-left: 20px;
-    padding-bottom: 10px;
     min-width: 120px;
+    min-height: 30px;
   }
 
   .authentication-error {

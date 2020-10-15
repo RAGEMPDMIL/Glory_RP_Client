@@ -30,10 +30,13 @@ function handleErorrsAndHints() {
 
     $('#username').focusout(function () {
         if ($('#username').val().length === 0) {
+            $('#username').css('border-color', 'red');
             $('#login-placeholder').removeClass('authentication-placeholder-up');
-            $('#username-hint').show();
+            $('#username-hint').text('Username field is required');
+            $('#username-hint').css('color', 'red');
         } else {
-            $('#username-hint').hide();
+            $('#username').css('border-color', '#d3d3d3');
+            $('#username-hint').text('');
         }
     });
 
@@ -41,11 +44,11 @@ function handleErorrsAndHints() {
         if ($('#password').val().length === 0) {
             $('#password').css('border-color', 'red');
             $('#password-placeholder').removeClass('authentication-placeholder-up');
-            $('#password-hint').text("Password field is required");
+            $('#password-hint').text('Password field is required');
             $('#password-hint').css('color', 'red');
         } else {
             $('#password').css('border-color', '#d3d3d3');
-            $('#password-hint').text("");
+            $('#password-hint').text('');
         }
     });
 }

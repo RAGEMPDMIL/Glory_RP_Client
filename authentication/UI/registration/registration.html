@@ -24,38 +24,42 @@
             <div class="authentication-field-wrapper">
                 <div class="authentication-input">
                     <i class="material-icons">person_outlined</i>
-                    <input type="text" required tabindex="1" id="login">
-                    <span class="authentication-input-placeholder">UserName</span>
+                    <input type="text" required tabindex="1" id="username">
+                    <span class="authentication-input-placeholder" id="username-placeholder">UserName</span>
                 </div>
+                <span class="authentication-hint" id="username-hint">Enter your username</span>
             </div>
 
             <div class="authentication-field-wrapper">
                 <div class="authentication-input">
                     <i class="material-icons">alternate_email</i>
-                    <input type="email" required tabindex="2" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" id="email">
-                    <span class="authentication-input-placeholder">Email</span>
+                    <input type="email" required tabindex="2" pattern="\^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\.[A-Z]{2,}$\igm" id="email">
+                    <span class="authentication-input-placeholder" id="email-placeholder">Email</span>
                 </div>
+                <span class="authentication-hint" id="email-hint">Enter your email</span>
             </div>
 
             <div class="authentication-field-wrapper">
                 <div class="authentication-input">
                     <i class="material-icons">lock_outlined</i>
                     <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required tabindex="3" id="password">
-                    <span class="authentication-input-placeholder">Password</span>
+                    <span class="authentication-input-placeholder" id="password-placeholder">Password</span>
                 </div>
+                <span class="authentication-hint" id="password-hint">A password most be 8 characters long<br> with at least 1 letter and 1 number</span>
             </div>
 
             <div class="authentication-field-wrapper">
                 <div class="authentication-input">
                     <i class="material-icons">done_outline</i>
-                    <input type="password" required tabindex="4" id="passwordConfirmation">
-                    <span class="authentication-input-placeholder">Confirm Password</span>
+                    <input type="password" required tabindex="4" id="password-confirmation">
+                    <span class="authentication-input-placeholder" id="password-confirmation-placeholder">Confirm Password</span>
                 </div>
+                <span class="authentication-hint" id="password-confirmation-hint">Confirm your password</span>
             </div>
 
             <div class="authentication-button">
                 <button tabindex="5" onclick="submitRegistration()">
-                    <span>Signup</span>
+                    <span id="button-span">Signup</span>
                     <div class="authentication-loading-spinner"></div>
                 </button>
             </div>
