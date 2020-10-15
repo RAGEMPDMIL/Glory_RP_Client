@@ -24,6 +24,14 @@ button:hover {
     align-self: flex-start;
 }
 
+.align-end {
+  align-self: flex-end;
+}
+
+.display-none {
+  display: none;
+}
+
 /* ----------------------------------------- Authentication UI --------------------------------------- */
 
 .page-container {
@@ -53,10 +61,16 @@ button:hover {
     padding-bottom: 10px;
 }
 
+.authentication-field-wrapper {
+  display: flex;
+  flex-flow: column;
+  min-height: 68px;
+}
+
 .authentication-input {
     position: relative;
     padding: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 5px;
     width: 300px;
     display: flex;
 }
@@ -122,14 +136,23 @@ button:hover {
     cursor: pointer;
 }
 
-  .authentication-input input:focus ~ .authentication-input-placeholder,
-  .authentication-input input:valid ~ .authentication-input-placeholder {
-    top: 0px;
-    bottom: 10px;
-    left: 48px;
-    font-size: 11px;
-    opacity: 1;
-    color: black;
+  .authentication-placeholder-up {
+    top: 0px !important;
+    bottom: 10px !important;
+    left: 48px !important;
+    font-size: 11px !important;
+    opacity: 1 !important;
+    color: black !important;
+  }
+
+  .authentication-hint {
+    font-size: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+  }
+
+  .authentication-error {
+    color: red;
   }
 
   .authentication-input.error input,
@@ -138,8 +161,7 @@ button:hover {
   }
 
   .authentication-small-link {
-    padding-top: 20px;
-    font-size: 14px;
+    font-size: 10px;
     color: #2095f2;
     cursor: pointer;
 }

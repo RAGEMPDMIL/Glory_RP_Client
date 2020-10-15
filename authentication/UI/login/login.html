@@ -16,17 +16,28 @@
             <span class="authentication-form-header">Login Your Account
             </span>
             <div class="divider"></div>
-            <div class="authentication-input">
-                <i class="material-icons">person_outlined</i>
-                <input type="text" required tabindex="1" id="username">
-                <span class="authentication-input-placeholder">Login</span>
+            <div class="authentication-field-wrapper">
+                <div class="authentication-input">
+                    <i class="material-icons" style="bottom: 10px;">person_outlined</i>
+                    <input type="text" required tabindex="1" id="username">
+                    <span class="authentication-input-placeholder" id="login-placeholder">Login</span>
+                </div>
+                <span class="authentication-hint" id="username-hint">Enter your username</span>
             </div>
-            <div class="authentication-input" style="padding-bottom: 10px;">
-                <i class="material-icons" style="bottom: 14px;">lock_outlined</i>
-                <input type="password" required tabindex="2" id="password">
-                <span class="authentication-input-placeholder">Password</span>
+
+            <div class="authentication-field-wrapper">
+                <div class="authentication-input">
+                    <i class="material-icons" style="bottom: 10px;">lock_outlined</i>
+                    <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required tabindex="2" id="password">
+                    <span class="authentication-input-placeholder" id="password-placeholder">Password</span>
+                </div>
+
+                <div class="login-password-footer-wrapper">
+                    <span class="authentication-hint" id="password-hint">Enter your password</span>
+                    <span class="authentication-small-link" style="padding-right: 20px;">Forgot password?</span>
+                </div>
             </div>
-            <span class="authentication-small-link align-start">Forgot password?</span>
+
             <div class="authentication-button">
                 <button id="login-button" tabindex="3" onclick="submitLogin();">
                     <span id="login-span">Login</span>

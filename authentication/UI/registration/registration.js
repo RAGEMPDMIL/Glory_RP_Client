@@ -4,16 +4,28 @@ $(document).ready(function() {
 
 function submitRegistration() {
     let login = document.getElementById('login');
+    let email = document.getElementById('email');
     let password = document.getElementById('password');
     let passwordConfirmation = (document.getElementById('passwordConfirmation').value == password.value);
-    let email = document.getElementById('email');
+
+    const emailValid = email.checkValidity();
+    const passwordValid = password.checkValidity();
+
+    if(!passwordConfirmation) {
+        
+    }
+
+    if(!emailValid) {
+    }
+
+    if(!passwordValid) {
+    }
     
-    if (passwordConfirmation) {
-        console.log("sent to the client side function");
+    if (passwordConfirmation && emailValid && passwordValid) {
         mp.trigger('client:register:SubmitRegistration', login.value, password.value, email.value);
     }
 }
+mp.trigger('client:auth:showLoginPage');
 
-function showLoginPage() {
-    mp.trigger('client:auth:showLoginPage');
+    function showLoginPage() {
 }

@@ -28,12 +28,12 @@
             </div>
             <div class="authentication-input">
                 <i class="material-icons">alternate_email</i>
-                <input type="email" required tabindex="2" id="email">
+                <input type="email" required tabindex="2" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" id="email">
                 <span class="authentication-input-placeholder">Email</span>
             </div>
             <div class="authentication-input">
                 <i class="material-icons">lock_outlined</i>
-                <input type="password" required tabindex="3" id="password">
+                <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required tabindex="3" id="password">
                 <span class="authentication-input-placeholder">Password</span>
             </div>
             <div class="authentication-input">

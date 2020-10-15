@@ -7,3 +7,8 @@
     padding-bottom: 0px;
     padding-left: 35px;
 }
+
+.login-password-footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
