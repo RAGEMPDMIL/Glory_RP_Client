@@ -1,9 +1,5 @@
 let authBrowser ,authCam;
 
-mp.events.add('playerReady', () => {
-    mp.events.call('client:auth:userConnected');
-});
-
 // Disabling movment, camera and chat 
 mp.events.add('client:auth:userConnected', () => {
     authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/UI/login/login.html');
@@ -45,7 +41,6 @@ mp.events.add('client:auth:disableCamera', () => {
     mp.players.local.freezePosition(false);
 });
 
-
 // Switching between login and register page //
 mp.events.add('client:auth:showRegisterPage', () => {
     authBrowser.destroy();
@@ -59,12 +54,12 @@ mp.events.add('client:auth:showLoginPage', () => {
 
 // Login attempted
 mp.events.add('client:auth:userLogin', (player, username, password) => {
-    mp.events.callRemote('server:login:userLogin', player ,username, password);
+    mp.events.callRemote('server:auth:userLogin', player ,username, password);
 });
 
 // Register attempted
 mp.events.add('client:auth:SubmitRegistration', (username, password, email) => {
-    mp.events.callRemote('server:register:userRegister', username, password, email);
+    mp.events.callRemote('server:auth:userRegister', username, password, email);
 })
 
 //Check verification code in mail.
