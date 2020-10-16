@@ -110,5 +110,3 @@ mp.events.add('client:auth:registerHandler', (handle) => {
         }
     }
 });
-
-//
