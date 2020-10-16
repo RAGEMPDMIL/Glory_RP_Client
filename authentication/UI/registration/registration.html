@@ -67,9 +67,25 @@
         </div>
     </div>
 
-    <div class="authentication-modal">
+    <div class="authentication-modal" id="authentication-modal">
         <div class="authentication-modal-content">
             <div class="authentication-modal-header">Error logging in!</div>
+            <p id="authentication-modal-text"></p>
+        </div>
+      </div>
+
+      <div class="authentication-modal" id="authentication-modal-varification-code" style="font-size: 35px;">
+        <div class="authentication-modal-content">
+            <div class="authentication-modal-header">1 Step left <br> Please enter the verification code here: 
+                <input type="text" id="insertedCode">
+                <span class="authentication-input-placeholder" id="varification-code-placeholder">verification Code</span>
+                <div class="authentication-button">
+                    <button onclick="clickToCheckVarificationCode()">
+                        <span id="button-span">Submit</span>
+                        <div class="authentication-loading-spinner"></div>
+                    </button>
+                </div>
+            </div>
             <p id="authentication-modal-text"></p>
         </div>
       </div>

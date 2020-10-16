@@ -67,6 +67,25 @@ mp.events.add('client:auth:SubmitRegistration', (username, password, email) => {
     mp.events.callRemote('server:register:userRegister', username, password, email);
 })
 
+//Check verification code in mail.
+mp.events.add('client:auth:checkVarification',(insertedCode)=>{
+    mp.events.callRemote('server:register:checkVarificationMode',insertedCode)
+        
+    
+})
+
+//verification code handler
+mp.events.add('client:auth:verificationHandler',(result)=>{
+    if(result)
+    {
+        mp.events.call('client:auth:showLoginPage');
+    }
+    else
+    {
+        authBrowser.execute(`onBadRegister(\`codeNotCorrect\`);`);
+    }
+})
+
 // Login handler
 mp.events.add('client:auth:loginHandler', (handle, username) => {
     switch (handle) {
@@ -100,12 +119,13 @@ mp.events.add('client:auth:registerHandler', (handle) => {
     switch (handle) {
         case 'success':
         {
-            mp.events.call('client:auth:showLoginPage');
+            authBrowser.execute(`onBadRegister(\`success\`);`);
+            //mp.events.call('client:auth:showLoginPage');
             break;
         }
         case 'userExists':
         {
-            authBrowser.execute(`onBadLogin(\`userExists\`);`);
+            authBrowser.execute(`onBadRegister(\`userExists\`);`);
             break;
         }
     }

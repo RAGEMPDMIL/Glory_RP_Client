@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 window.onclick = function(event) {
     if (event.target != modal) {
-      $('.authentication-modal').css('display', 'none');
+      $('#authentication-modal').css('display', 'none');
     }
   };
 
@@ -33,7 +33,12 @@ function showLoginPage() {
     mp.trigger('client:auth:showLoginPage');
 }
 
-function onBadLogin(handle) {
+function clickToCheckVarificationCode(){
+    let insertedCode= document.getElementById('insertedCode');
+    mp.trigger('client:auth:checkVarification',insertedCode.value);//TODO
+}
+
+function onBadRegister(handle) {
     switch (handle)
     {
         case 'userExists':
@@ -41,9 +46,25 @@ function onBadLogin(handle) {
             $('.authentication-loading-spinner').hide();
             $('#button-span').show();
             $('#authentication-modal-text').text('Register failed! User already exists.');
-            $('.authentication-modal').show();
+            $('#authentication-modal').show();
             break;
         }
+        case 'success':
+        {
+            $('.authentication-loading-spinner').hide();
+            $('#button-span').show();
+            $('#authentication-modal-text').text('Register failed! User already exists.');
+            $('#authentication-modal-varification-code').show();
+            break;
+        }
+        case 'codeNotCorrect':
+            {
+                $('.authentication-loading-spinner').hide();
+                $('#button-span').show();
+                $('#authentication-modal-text').text('The verification code incorrect please try again');
+                $('#authentication-modal').show();
+                break;
+            }
     }
 }
 
