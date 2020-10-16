@@ -1,6 +1,14 @@
+const modal = document.getElementsByClassName('authentication-modal');
+
 $(document).ready(function () {
     $('.authentication-loading-spinner').hide();
 });
+
+window.onclick = function(event) {
+    if (event.target != modal) {
+      $('.authentication-modal').css('display', 'none');
+    }
+  };
 
 handleErorrsAndHints();
 
@@ -23,6 +31,20 @@ function submitRegistration() {
 
 function showLoginPage() {
     mp.trigger('client:auth:showLoginPage');
+}
+
+function onBadLogin(handle) {
+    switch (handle)
+    {
+        case 'userExists':
+        {
+            $('.authentication-loading-spinner').hide();
+            $('#button-span').show();
+            $('#authentication-modal-text').text('Register failed! User already exists.');
+            $('.authentication-modal').show();
+            break;
+        }
+    }
 }
 
 function handleErorrsAndHints() {

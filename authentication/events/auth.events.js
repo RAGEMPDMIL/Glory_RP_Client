@@ -68,16 +68,45 @@ mp.events.add('client:auth:SubmitRegistration', (username, password, email) => {
 })
 
 // Login handler
-mp.events.add('client:auth:loginHandler', (handle,player) => {
+mp.events.add('client:auth:loginHandler', (handle, username) => {
     switch (handle) {
-        case 'success': {
+        case 'success': 
+        {
             mp.events.call('client:auth:disableCamera');
             mp.events.call('client:auth:hideLoginScreen');
-            mp.gui.chat.push(`!{#FB4E4E}Welcome to Israel DeathMatch Server !, ${player.name}!`);
+            mp.gui.chat.push(`!{#FB4E4E}Welcome to Israel DeathMatch Server !, ${username}`);
+            break;
         }
         case 'incorrectInfo':
         {
-            
+            authBrowser.execute(`onBadLogin(\`incorrectInfo\`);`);
+            break;
+        }
+        case 'logged': 
+        {
+            authBrowser.execute(`onBadLogin(\`logged\`);`);
+            break;
+        }
+        case 'doesntExist':
+        {
+            authBrowser.execute(`onBadLogin(\`doesntExist\`);`);
+            break;
+        }
+    }
+});
+
+// Register handler
+mp.events.add('client:auth:registerHandler', (handle) => {
+    switch (handle) {
+        case 'success':
+        {
+            mp.events.call('client:auth:showLoginPage');
+            break;
+        }
+        case 'userExists':
+        {
+            authBrowser.execute(`onBadLogin(\`userExists\`);`);
+            break;
         }
     }
 });

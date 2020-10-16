@@ -1,6 +1,14 @@
+const modal = document.getElementsByClassName('authentication-modal');
+
 $(document).ready(function () {
     $('.authentication-loading-spinner').hide();
 });
+
+window.onclick = function(event) {
+    if (event.target != modal) {
+      $('.authentication-modal').css('display', 'none');
+    }
+  };
 
 handleErorrsAndHints();
 
@@ -17,6 +25,36 @@ function submitLogin() {
 
 function showRegisterPage() {
     mp.trigger('client:auth:showRegisterPage');
+}
+
+function onBadLogin(handle) {
+    switch (handle)
+    {
+        case 'incorrectInfo':
+        {
+            $('.authentication-loading-spinner').hide();
+            $('#login-span').show();
+            $('#authentication-modal-text').text('Login denied! Please check your credentials.')
+            $('.authentication-modal').show();
+            break;
+        }
+        case 'logged':
+        {
+            $('.authentication-loading-spinner').hide();
+            $('#login-span').show();
+            $('#authentication-modal-text').text('Login denied! The account is already logged in.')
+            $('.authentication-modal').show();
+            break;
+        }
+        case 'doesntExist':
+        {
+            $('.authentication-loading-spinner').hide();
+            $('#login-span').show();
+            $('#authentication-modal-text').text('Login denied! The account doesn\'n exist');
+            $('.authentication-modal').show();
+            break;
+        }
+    }
 }
 
 function handleErorrsAndHints() {
