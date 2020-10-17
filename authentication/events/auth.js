@@ -109,12 +109,18 @@ mp.events.add('client:auth:loginHandler', (handle, username) => {
     }
 });
 
+mp.events.add('client:auth:showVerificationPage', () => {
+    authBrowser.destroy();
+    authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/UI/verification/verification.html');
+});
+
 // Register handler
 mp.events.add('client:auth:registerHandler', (handle) => {
     switch (handle) {
         case 'success':
         {
             authBrowser.execute(`onBadRegister(\`success\`);`);
+            mp.events.call('client:auth:showVerificationPage');
             //mp.events.call('client:auth:showLoginPage');
             break;
         }

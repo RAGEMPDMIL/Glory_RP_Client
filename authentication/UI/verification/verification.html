@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style/general.css">
+    <link rel="stylesheet" href="../registration/registration.css">
+    <script src="../../../assets/jquery-3.5.1.js"></script>
+    <script src="./verification.js"></script>
+    <title>verification Form</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="authentication-form">
+            <div class="authentication-form-header">Verify your account</div>
+            <div class="divider"></div>
+            <div class="authentication-field-wrapper">
+                <div class="authentication-input">
+                    <i class="material-icons" style="height: 25px;">fingerprint</i>
+                    <input type="text"  required id="Verification-Code">
+                    <span class="authentication-input-placeholder" id="Verification-Code-placeholder">Verification code</span>
+                </div>
+                <span class="authentication-hint" id="Verification-Code-hint">Enter your verification code</span>
+                <div class="authentication-button" style="  margin: auto;
+                width: 87%;">
+                    <button onclick="submitVerification()">
+                        <span id="button-span">Submit</span>
+                        <div class="authentication-loading-spinner"></div>
+                    </button>
+                </div>
+                <span class="authentication-small-button" onclick="" style="text-align: center;">Didnt get a mail?</span>
+            </div>
+        </div>
+    </div>
+    <div class="authentication-modal" id="authentication-modal">
+        <div class="authentication-modal-content">
+            <div class="authentication-modal-header">Error logging in!</div>
+            <p id="authentication-modal-text"></p>
+        </div>
+    </div>
+        
+</body>
+</html>

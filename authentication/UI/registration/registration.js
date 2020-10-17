@@ -57,14 +57,14 @@ function onBadRegister(handle) {
             $('#authentication-modal-varification-code').show();
             break;
         }
-        case 'codeNotCorrect':
+        /*case 'codeNotCorrect':
             {
                 $('.authentication-loading-spinner').hide();
                 $('#button-span').show();
                 $('#authentication-modal-text').text('The verification code incorrect please try again');
                 $('#authentication-modal').show();
                 break;
-            }
+            }*/
     }
 }
 
