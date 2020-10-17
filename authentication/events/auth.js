@@ -19,6 +19,7 @@ mp.events.add('client:auth:hideLoginScreen', () => {
     authBrowser.destroy();
     mp.gui.chat.activate(true);
     mp.gui.chat.show(true);
+    mp.game.ui.setMinimapVisible(false);
     mp.game.ui.displayRadar(true);
     mp.gui.cursor.show(false, false);
 });
