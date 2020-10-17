@@ -6,5 +6,6 @@ require('./DM_IL_Client/authentication/events/auth');
 
 // UI
 
-// COMMANDS
+// PLAYER
 require('./DM_IL_Client/player/commands/player-commands');
+require('./DM_IL_Client/player/events/events');
