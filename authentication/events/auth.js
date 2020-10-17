@@ -115,6 +115,10 @@ mp.events.add('client:auth:showVerificationPage', () => {
     authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/UI/verification/verification.html');
 });
 
+mp.events.add('client:auth:resendMail', ()=>{
+    mp.events.callRemote('server:auth:resendMail');
+})
+
 // Register handler
 mp.events.add('client:auth:registerHandler', (handle) => {
     switch (handle) {

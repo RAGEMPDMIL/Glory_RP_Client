@@ -21,6 +21,15 @@ function submitVerification() {
     mp.trigger('client:auth:checkVarification',insertedCode.value);
 }
 
+function didntGetMail(){
+    mp.trigger('client:auth:resendMail');
+    $('#resendMail').hide();
+    setTimeout(function(){
+        $('#resendMail').show();
+    }, 60000);
+    
+}
+
 
 function onBadRegister(handle) {
     switch (handle)
@@ -48,7 +57,7 @@ function handleErorrsAndHints() {
             $('#Verification-Code-placeholder').removeClass('authentication-placeholder-up');
             $('#Verification-Code-hint').text('Verification-Code field is required');
             $('#Verification-Code-hint').css('color', 'red');
-        } else if ($('#Verification-Code').val().length <= 6 && $('#Verification-Code').val().length > 0) {
+        } else if ($('#Verification-Code').val().length < 6 && $('#Verification-Code').val().length > 0) {
             $('#Verification-Code').css('border-color', 'red');
             $('#Verification-Code-hint').text('Verification-Code field must have at least 6 characters');
             $('#Verification-Code-hint').css('color', 'red');

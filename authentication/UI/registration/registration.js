@@ -91,7 +91,7 @@ function handleErorrsAndHints() {
             $('#username-placeholder').removeClass('authentication-placeholder-up');
             $('#username-hint').text('Username field is required');
             $('#username-hint').css('color', 'red');
-        } else if ($('#username').val().length <= 6 && $('#username').val().length > 0) {
+        } else if ($('#username').val().length < 6 && $('#username').val().length > 0) {
             $('#username').css('border-color', 'red');
             $('#username-hint').text('Username field must have at least 6 characters');
             $('#username-hint').css('color', 'red');
