@@ -1,0 +1,41 @@
+body {
+    margin: 0px;
+    color: white;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.hud-container {
+   width: 100vw;
+   height: 100vh; 
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-end;
+   flex-flow: column;
+}
+
+.hud-wrapper {
+    margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.432);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.hud-item-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 30px;
+    min-height: 40px;
+}
+
+.hud-icon {
+    width: 35px;
+    height: 35px;
+    padding-bottom: 8px;
+}
+
+.hud-span {
+    font-size: 25px;
+    padding-right: 15px;
+    padding-left: 25px;
+}
