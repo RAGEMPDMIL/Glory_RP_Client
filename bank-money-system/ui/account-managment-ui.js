@@ -37,7 +37,7 @@ function loadMainPageData(hour, minute, playerBank, playerMoney) {
         }
 
         $('#time-span').text(gameHour + ':' + gameMinute);
-    }, 60000);
+    }, 2000);
 
     $('#account-balance-span').text('Account balance: $' + String(playerBank).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
     $('#player-money-span').text('Available deposit: $' + String(playerMoney).replace(/\B(?=(\d{3})+(?!\d))/g, ","));

@@ -22,6 +22,8 @@ mp.events.add('client:auth:hideLoginScreen', () => {
     mp.game.ui.setMinimapVisible(false);
     mp.game.ui.displayRadar(true);
     mp.gui.cursor.show(false, false);
+    mp.events.call('client:playerHud:loadHud');
+    mp.events.callRemote('server:player:loadPlayerData');
 });
 
 // Events for camare control when in authentication
@@ -61,7 +63,7 @@ mp.events.add('client:auth:userLogin', (player, username, password) => {
 // Register attempted
 mp.events.add('client:auth:SubmitRegistration', (username, password, email) => {
     mp.events.callRemote('server:auth:userRegister', username, password, email);
-})
+});
 
 //Check verification code in mail.
 mp.events.add('client:auth:checkVarification',(insertedCode)=>{
