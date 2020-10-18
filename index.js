@@ -9,4 +9,4 @@ require('./DM_IL_Client/authentication/events/auth');
 // PLAYER
 require('./DM_IL_Client/player/commands/player-commands');
 require('./DM_IL_Client/player/events/events');
-require('./DM_IL_Client/bank-money-system/keybind')
+require('./DM_IL_Client/bank-money-system/events/events');

@@ -5,6 +5,15 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.page-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
 input:focus, button:focus{
     outline: none;
 }
@@ -33,15 +42,6 @@ button:hover {
 }
 
 /* ----------------------------------------- Authentication UI --------------------------------------- */
-
-.page-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
 
 .authentication-form {
     width: 370px;

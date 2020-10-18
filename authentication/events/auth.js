@@ -2,7 +2,7 @@ let authBrowser ,authCam;
 
 // Disabling movment, camera and chat 
 mp.events.add('client:auth:userConnected', () => {
-    authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/UI/login/login.html');
+    authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/ui/login/login.html');
     mp.players.local.freezePosition(true);
     mp.game.ui.setMinimapVisible(true);
     mp.gui.chat.activate(false);
@@ -45,12 +45,12 @@ mp.events.add('client:auth:disableCamera', () => {
 // Switching between login and register page //
 mp.events.add('client:auth:showRegisterPage', () => {
     authBrowser.destroy();
-    authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/UI/registration/registration.html');
+    authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/ui/registration/registration.html');
 });
 
 mp.events.add('client:auth:showLoginPage', () => {
     authBrowser.destroy();
-    authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/UI/login/login.html');
+    authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/ui/login/login.html');
 });
 
 // Login attempted
@@ -89,7 +89,7 @@ mp.events.add('client:auth:loginHandler', (handle, username) => {
         {
             mp.events.call('client:auth:disableCamera');
             mp.events.call('client:auth:hideLoginScreen');
-            mp.gui.chat.push(`!{#FB4E4E}Welcome to Israel DeathMatch Server !, ${username}`);
+            mp.gui.chat.push(`!{#FB4E4E}Welcome to Glory DeathMatch Server! ${username}`);
             break;
         }
         case 'incorrectInfo':
@@ -112,7 +112,7 @@ mp.events.add('client:auth:loginHandler', (handle, username) => {
 
 mp.events.add('client:auth:showVerificationPage', () => {
     authBrowser.destroy();
-    authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/UI/verification/verification.html');
+    authBrowser = mp.browsers.new('package://DM_IL_Client/authentication/ui/verification/verification.html');
 });
 
 mp.events.add('client:auth:resendMail', ()=>{

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./account-managment-ui.css">
+    <script src="../../assets/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="bank-ui-container">
+            <div class="bank-ui-header">
+
+                <div class="header-logo-wrapper">
+                    <img src="../../assets/images/bank-ui/logo.png" alt="logo">
+                </div>
+
+                <div class="header-hour-wrapper">
+                    <span id="time-span">16:25</span>
+                </div>
+
+                <div class="header-quit-wrapper">
+                    <img src="../../assets/images/bank-ui/quit.png" alt="quit" onclick="onQuitUI();">
+                </div>
+
+            </div>
+
+            <div class="bank-ui-content">
+
+                <div class="content-welcome-text">
+                    <span>Welcome to Pacific Standard. What can we help you with today ?</span>
+                </div>
+
+                <div class="content-user-balance-wrapper">
+                    <span class="account-balance-span" id="account-balance-span">Account balance: 10,000</span>
+                    <span class="available-balance-span" id="player-money-span">Available deposit: 10,0000000</span>
+                </div>
+
+                <div class="content-actions-wrapper">
+                    <div class="content-action-box-wrapper">
+                        <span>Withdraw</span>
+                        <img src="../../assets/images/bank-ui/withdraw.png" class="withdraw-icon" alt="withdraw">
+                    </div>
+                    <div class="content-action-box-wrapper">
+                        <span>Transfer</span>
+                        <img src="../../assets/images/bank-ui/transfer.png" class="transfer-icon" alt="trasnfer">
+                    </div>
+                    <div class="content-action-box-wrapper">
+                        <span>Deposit</span>
+                        <img src="../../assets/images/bank-ui/deposit.png" class="deposit-icon" alt="deposit">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./account-managment-ui.js"></script>
+</body>
+</html>
