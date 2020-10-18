@@ -10,3 +10,6 @@ require('./DM_IL_Client/authentication/events/auth');
 require('./DM_IL_Client/player/commands/player-commands');
 require('./DM_IL_Client/player/events/events');
 require('./DM_IL_Client/bank-money-system/events/events');
+
+// GUN Store
+require('./DM_IL_Client/gun-system/peds.js');
