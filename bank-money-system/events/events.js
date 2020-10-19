@@ -8,7 +8,8 @@ mp.events.add('client:moneySystem:moneyUIAvailable', (hour,minute, playerBank, p
         if(!moneyUIOpen) {
             moneyUIOpen = true;
             moneyUI = mp.browsers.new('package://DM_IL_Client/bank-money-system/ui/account-managment-ui.html');
-            moneyUI.execute(`loadMainPageData('${hour}', '${minute}', '${playerBank}', '${playerMoney}');`);
+            mp.events.callRemote('server:worldTime:getWorldTime', 'moneySystem');
+            mp.events.callRemote('server:moneyBankSystem:getPlayerMoney');
             mp.players.local.freezePosition(true);
             mp.gui.chat.activate(false);
             mp.gui.chat.show(false);
@@ -30,4 +31,12 @@ mp.events.add('client:moneySystem:closeMoneyUI', () => {
     mp.gui.chat.activate(true);
     mp.gui.chat.show(true);
     mp.gui.cursor.show(false, false);
+});
+
+mp.events.add('client:moneyBankSystem:getWorldTime', (hour, minute) => {
+    moneyUI.execute(`handleClock('${hour}', '${minute}');`);
+});
+
+mp.events.add('client:moneyBankSystem:getPlayerMoney', (playerBank, playerWallet) => {
+    moneyUI.execute(`loadPlayerMoney('${playerBank}', '${playerWallet}');`);
 });

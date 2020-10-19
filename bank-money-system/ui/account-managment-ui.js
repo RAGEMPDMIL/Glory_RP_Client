@@ -6,7 +6,7 @@ function onQuitUI() {
     mp.trigger('client:moneySystem:closeMoneyUI');
 }
 
-function loadMainPageData(hour, minute, playerBank, playerMoney) {
+function handleClock(hour, minute) {
     let gameHour = hour;
     let gameMinute = minute;
 
@@ -38,7 +38,9 @@ function loadMainPageData(hour, minute, playerBank, playerMoney) {
 
         $('#time-span').text(gameHour + ':' + gameMinute);
     }, 2000);
+}
 
+function loadPlayerMoney(playerBank, playerMoney) {
     $('#account-balance-span').text('Account balance: $' + String(playerBank).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
     $('#player-money-span').text('Available deposit: $' + String(playerMoney).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 }
