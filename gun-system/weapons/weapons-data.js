@@ -145,5 +145,3 @@ const weaponsData = {
         }
     }
 };
-
-Object.assign(global, weaponsData);
