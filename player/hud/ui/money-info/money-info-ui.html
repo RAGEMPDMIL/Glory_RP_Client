@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,25 @@
     <link rel="stylesheet" href="./money-info-ui.css">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="hud-container">
+    <div class="hud-container"
+        style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+        unselectable="on" onselectstart="return false;" onmousedown="return false;">
         <div class="hud-wrapper">
             <div class="hud-item-wrapper" style="padding-top: 5px;">
                 <span class="hud-span" id="wallet-money">$1,000</span>
                 <img class="hud-icon" src="../../../../assets/images/player-hud/wallet.png" alt="wallet">
             </div>
-    
+
             <div class="hud-item-wrapper">
                 <span class="hud-span" id="credit-money">$5,000</span>
-                <img class="hud-icon" src="../../../../assets/images/player-hud/credit-card.png" style="padding-bottom: 5px;" alt="credit-card">
+                <img class="hud-icon" src="../../../../assets/images/player-hud/credit-card.png"
+                    style="padding-bottom: 5px;" alt="credit-card">
             </div>
         </div>
     </div>
     <script src="./money-info-ui.js"></script>
 </body>
+
 </html>
