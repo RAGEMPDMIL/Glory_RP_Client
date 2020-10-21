@@ -91,7 +91,7 @@ mp.events.add('client:auth:loginHandler', (handle, username) => {
         {
             mp.events.call('client:auth:disableCamera');
             mp.events.call('client:auth:hideLoginScreen');
-            mp.gui.chat.push(`!{#FB4E4E}Welcome to Glory DeathMatch Server! ${username}`);
+            mp.gui.chat.push(`!{#1E90FF}Welcome to Glory DeathMatch Server! ${username}`);
             break;
         }
         case 'incorrectInfo':

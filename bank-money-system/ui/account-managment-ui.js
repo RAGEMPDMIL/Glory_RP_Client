@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //loadMainPageData();
+    $('.bank-ui-welcome-content').hide();
 });
 
 function onQuitUI() {
@@ -41,6 +41,6 @@ function handleClock(hour, minute) {
 }
 
 function loadPlayerMoney(playerBank, playerMoney) {
-    $('#account-balance-span').text('Account balance: $' + String(playerBank).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-    $('#player-money-span').text('Available deposit: $' + String(playerMoney).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+    $('#account-balance-span').text('Account Balance: $' + String(playerBank).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+    $('#player-money-span').text('Wallet Balance: $' + String(playerMoney).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 }
