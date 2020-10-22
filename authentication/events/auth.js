@@ -23,7 +23,7 @@ mp.events.add('client:auth:hideLoginScreen', () => {
     mp.game.ui.displayRadar(true);
     mp.gui.cursor.show(false, false);
     mp.events.call('client:playerHud:loadHud');
-    mp.events.callRemote('server:player:loadPlayerData');
+    // mp.events.callRemote('server:player:loadPlayerData');
 });
 
 // Events for camare control when in authentication
