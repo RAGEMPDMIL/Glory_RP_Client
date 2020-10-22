@@ -33,7 +33,7 @@ mp.events.add('client:auth:enableCamera', () => {
     mp.players.local.freezePosition(true);
 
     authCam.setActive(true);
-    authCam.setCoord(-2000,-2000,-2000);
+    authCam.setCoord(-1757.12,-739.53,10);
     authCam.pointAtCoord(-1764,-715,35);
     mp.game.cam.renderScriptCams(true, false, 0, true, false);
 });
