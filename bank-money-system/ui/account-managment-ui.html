@@ -1,75 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width">
+        <link href="./account-managment-ui.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <script src="../../assets/jquery-3.5.1.js"></script>
+        <script src="./account-managment-ui.js"></script>
+        <style>
+			 #depositUI, #withdrawUI, #transferUI, #general, #topbar, #waiting, #spinner, #error
+			 {display: none;}
+		</style>
+	</head>
+    <body>
+    	<div class="container">
+    		<div id="result"></div>
+    		<div class="topbar" id="topbar">
+    			<div class="cont-p-1">
+    				<div class="parale-1 "></div>
+    			</div>
+    			<div class="cont-p-2">
+    				<div class="parale-2"></div>
+    			</div>
+    			<div class="cont-p-3">
+    				<div class="parale-3"></div>
+    			</div>
+    			<nav>
+    				<div class="logo-topbar"></div>
+    				<button class="btn-sign-out">Would you like to disconnect?<i class="fas fa-sign-out-alt"></i></button>
+    			</nav>
+    		</div>
+<!-- ########### GENERAL ###########  -->
+    		<div class="cont-content" id="general">
+    			<div class="flex">
+    				<div class="balance box-shadow">
+	    				<p>Welcome<br>
+	    					<span class="name"><span class="username1"></span></span><br>
+	    					You have<br>
+	    					<span class="money"><span class="euro">$</span><span class="curbalance"></span></span>
+	    				</p>
+		    		</div>
+		    		<div class="list-btn">
+		    			<button class="btn btn-blue" id="deposit">
+		    				<i class="far fa-money-bill-alt"></i>
+		    				<span class="far fa-money-bill-alt icon"></span>
+		    				<p>Deposit<br>
+		    				<span>Deposit money to the bank</span></p>
+		    			</button>
+			    		<button class="btn btn-violet" id="withdraw">
+			    			<i class="far fa-credit-card"></i>
+		    				<span class="far fa-credit-card icon"></span>
+		    				<p>Withdraw<br>
+		    				<span>Withdraw money from the bank</span></p>
+			    		</button>
+			    		<button class="btn btn-orange" id="transfer">
+			    			<i class="fas fa-exchange-alt"></i>
+		    				<span class="fas fa-exchange-alt icon"></span>
+		    				<p style="padding: 10px;">Transfer<br>
+		    				<span>Transfer money to another player</span></p>
+			    		</button>
+		    		</div>
+    			</div>
+    			<div class="flex">
+    				<div class="pub box-shadow confiance">
+    					<p>
+    						<span>You can trust us</span><br>
+    						The number of BNP Paribas account creation was increased by 7% since 2017
+    					</p>
+    					<div class="circle-confiance"></div>
+    				</div>
+    				<!-- <div class="pub box-shadow social">
+    					<button class="btn btn-blue" id="esx_invest">
+							<i class="far fa-handshake"></i>
+							<span class="far fa-handshake icon"></span>
+							<p>ESX Invest<br>
+							<span>invest into companies</span></p>
+						</button>
+    				</div> -->
+    			</div>
+			</div>
+			
+<!-- ########### DEPOSIT ###########  -->
+	    	<div class="cont-content" id="depositUI">
+    			<div class="flex">
+    				<div class="btn btn-blue banniere">
+    					<p>Deposit your money<br>
+		    			<span>We are the most secure bank of the city</span></p>
+    				</div>
+    				<button class="btn btn-grey back">
+    					<i class="fas fa-bars"></i>
+	    				<span class="fas fa-arrow-left icon"></span>
+	    				<p>Return<br>
+	    				<span>To the main menu</span></p>
+    				</button>
+    			</div>
+    			<form id="deposit1">
+    				<div class="input-cont box-shadow">
+    					<label id="deposit-error">How much do you want to deposit?</label>
+    					<input id="amount" type="number" placeholder="$0">
+    				</div>
+    				<button class="btn btn-green" type="submit">
+    					<i class="fas fa-check"></i>
+	    				<span class="fas fa-check icon"></span>
+	    				<p>Validate<br>
+	    				<span>Your Deposit</span></p>
+    				</button>
+				</form>
+	    	</div>
+<!-- ########### WITHDRAW ###########  -->
+	    	<div class="cont-content" id="withdrawUI">
+    			<div class="flex">
+    				<div class="btn btn-violet banniere">
+    					<p>Withdraw money<br>
+		    			<span>from you bank account</span></p>
+    				</div>
+    				<button class="btn btn-grey back">
+    					<i class="fas fa-bars"></i>
+	    				<span class="fas fa-arrow-left icon"></span>
+	    				<p>Return<br>
+	    				<span>to the main menu</span></p>
+    				</button>
+    			</div>
+    			<form id="withdraw1">
+    				<div class="input-cont box-shadow">
+    					<label id="withdraw-error">How much do you want to withdraw?</label>
+    					<input id="amountw" type="number" placeholder="$0">
+    				</div>
+    				<button class="btn btn-green" type="submit">
+    					<i class="fas fa-check"></i>
+	    				<span class="fas fa-check icon"></span>
+	    				<p>Validate<br>
+	    				<span>Your withdrawal</span></p>
+    				</button>
+				</form>
+	    	</div>
+<!-- ########### TRANSFER ###########  -->
+	    	<div class="cont-content" id="transferUI">
+    			<div class="flex">
+    				<div class="btn btn-orange banniere">
+    					<p>Make a transfer<br>
+		    			<span>to a friend</span></p>
+    				</div>
+    				<button class="btn btn-grey back">
+    					<i class="fas fa-bars"></i>
+	    				<span class="fas fa-arrow-left icon"></span>
+	    				<p>Return<br>
+	    				<span>To the main menu</span></p>
+    				</button>
+    			</div>
+    			<form id="transfer1">
+    				<div class="double-input">
+    					<div class="input-cont box-shadow">
+	    					<label id="transfer-error">How much do you want to transfer?</label>
+	    					<input id="amountt" type="number" placeholder="$0">
+	    				</div>
+	    				<div class="input-cont box-shadow">
+	    					<label id="username-error">Who would you like to transfer to?</label>
+	    					<input id="to" type="text" placeholder="Username">
+	    				</div>
+    				</div>
+    				<button class="btn btn-green" type="submit">
+    					<i class="fas fa-check"></i>
+	    				<span class="fas fa-check icon"></span>
+	    				<p>Validate<br>
+	    				<span>Your transfer</span></p>
+    				</button>
+				</form>
+	    	</div>
+<!-- ########### WAITING ###########  -->
+	    	<div class="cont-waiting" id="waiting">
+	    		<div class="content-waiting">
+    				<div class="mainlogo"></div>
+    				<p><span>Please</span> connect<br>
+    				by the help <span>of</span> your fingerprint</p>
+    				<div id="fingerprint-content">
+    					<div class="fingerprint-default"></div>
+    					<div class="fingerprint-active"></div>
+    					<div class="fingerprint-bar"></div>
+    				</div>
+    			</div>
+    			<div class="bg-waiting">
+    				<div class="cont-p-4">
+    					<div class="parale-4"></div>
+    				</div>
+    				<div class="cont-p-5">
+    					<div class="parale-5"></div>
+    				</div>
+    				<div class="cont-p-6">
+    					<div class="parale-6"></div>
+    				</div>
+    				<div class="cont-p-7">
+    					<div class="parale-7"></div>
+    				</div>
+    			</div>
+			</div>
+			
+			<div class="cont-content" id="spinner">
+				<div class="flex" style="justify-content: center; align-items: center; flex-flow: column; height: 100%;">
+					<div class="loader"></div>
+				</div>
+			</div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./account-managment-ui.css">
-    <script src="../../assets/jquery-3.5.1.js"></script>
-</head>
+			<div class="cont-content" id="error">
+				<div class="flex" style="justify-content: center; align-items: center; flex-flow: column; height: 100%;">
+					<p style="padding-bottom: 20px;"><span id="action-error">error</span></p>
+					<button class="btn btn-grey back">
+						<i class="fas fa-bars"></i>
+						<span class="fas fa-arrow-left icon"></span>
+						<p>Return<br>
+						<span>To the main menu</span></p>
+					</button>
+				</div>
+			</div>
 
-<body>
-    <div class="page-container">
-        <div class="bank-ui-container">
-            <div class="bank-ui-header">
-
-                <div class="header-logo-wrapper">
-                    <img src="../../assets/images/bank-ui/logo.png" alt="logo">
-                </div>
-
-                <div class="header-hour-wrapper">
-                    <span id="time-span">16:25</span>
-                </div>
-
-                <div class="header-quit-wrapper">
-                    <img src="../../assets/images/bank-ui/quit.png" alt="quit" onclick="onQuitUI();">
-                </div>
-
-            </div>
-
-            <div class="bank-ui-welcome-content">
-
-                <div class="content-welcome-text">
-                    <span>Welcome to Pacific Standard. What can we help you with today ?</span>
-                </div>
-
-                <div class="content-user-balance-wrapper">
-                    <span class="account-balance-span" id="account-balance-span">Account balance: $10,000</span>
-                    <span class="available-balance-span" id="player-money-span">Wallet balance: $10,000</span>
-                </div>
-
-                <div class="content-actions-wrapper">
-                    <div class="content-action-box-wrapper">
-                        <span>Withdraw</span>
-                        <img src="../../assets/images/bank-ui/withdraw.png" class="withdraw-icon" alt="withdraw">
-                    </div>
-                    <div class="content-action-box-wrapper">
-                        <span>Transfer</span>
-                        <img src="../../assets/images/bank-ui/transfer.png" class="transfer-icon" alt="trasnfer">
-                    </div>
-                    <div class="content-action-box-wrapper">
-                        <span>Deposit</span>
-                        <img src="../../assets/images/bank-ui/deposit.png" class="deposit-icon" alt="deposit">
-                    </div>
-                </div>
-            </div>
-
-            <div class="bank-ui-deposit-content">
-                <div class="first-column">
-                    <span class="account-balance-span" id="account-balance-span">Account balance: $10,000</span>
-                </div>
-
-                <div class="second-column">
-                    
-                </div>
-
-                <div class="third-column">
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="./account-managment-ui.js"></script>
-</body>
-</html>
+    	</div>
+    </body>
+  </html>

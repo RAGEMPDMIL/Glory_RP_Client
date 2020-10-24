@@ -17,6 +17,7 @@ mp.events.add('client:auth:userConnected', () => {
 // Hidding loading screen
 mp.events.add('client:auth:hideLoginScreen', () => {
     authBrowser.destroy();
+    mp.players.local.dimension = 0;
     mp.gui.chat.activate(true);
     mp.gui.chat.show(true);
     mp.game.ui.setMinimapVisible(false);
@@ -29,9 +30,7 @@ mp.events.add('client:auth:hideLoginScreen', () => {
 // Events for camare control when in authentication
 mp.events.add('client:auth:enableCamera', () => {
     authCam = mp.cameras.new('default', new mp.Vector3(0, 0, 0), new mp.Vector3(0, 0, 0), 40);
-    mp.players.local.position = new mp.Vector3(-2000,-2000,-2000);
     mp.players.local.freezePosition(true);
-
     authCam.setActive(true);
     authCam.setCoord(-1757.12,-739.53,10);
     authCam.pointAtCoord(-1764,-715,35);

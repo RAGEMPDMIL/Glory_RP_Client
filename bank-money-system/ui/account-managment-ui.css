@@ -1,185 +1,629 @@
-/* ----------------------------------------- Initialzition ------------------------------------------- */
-@font-face {
-    font-family: "gadugi";
-    src: url("../../assets/fonts/gadugi-normal.ttf");
+html,
+body,
+p,
+button {
+    padding: 0;
+    margin: 0;
 }
 
-body {
-    padding: unset;
-    margin: unset;
-    font-family: 'gadugi', sans-serif;
+body.active {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.page-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-  }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
-input:focus, button:focus{
+textarea:focus,
+input:focus {
     outline: none;
 }
 
-button:hover {
+*:focus {
+    outline: none;
+}
+
+@font-face {
+    font-family: vision-heavy;
+    src: url(../../assets/fonts/Vision-Heavy.otf);
+}
+
+@font-face {
+    font-family: bariol;
+    src: url(../../assets/fonts/Bariol_Regular.otf);
+}
+
+.container {
+    height: 600px;
+    width: 900px;
+    margin: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "bariol", sans-serif;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0px 0px 40px 0px rgba(224, 224, 224, 0.5);
+    -moz-box-shadow: 0px 0px 40px 0px rgba(224, 224, 224, 0.5);
+    box-shadow: 0px 0px 40px 0px rgba(224, 224, 224, 0.5);
+}
+
+.cont-content {
+    background: #f9f9f9;
+    height: calc(100% - 179px);
+    width: calc(100% - 120px);
+    padding: 60px;
+}
+
+.cont-waiting {
+    background: #f9f9f9;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+}
+
+/*######################################################*/
+/* ###############         BUTTON        ###############*/
+/*######################################################*/
+button {
     cursor: pointer;
+    border: 0;
 }
 
-.divider {
-    width: 320px;
-    border-top: 1px solid #bbb;
-    padding-bottom: 40px;
-}
-
-/* ----------------------------------------------- General ------------------------------------------- */
-.align-start {
-    align-self: flex-start;
-}
-
-.align-end {
-  align-self: flex-end;
-}
-
-.display-none {
-  display: none;
-}
-
-/* ----------------------------------------- Account management UI -------------------------------------*/
-.bank-ui-container {
-    background-color: #00ADEE;
-    width: 870px;
-    height: 720px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* --------------------------------------------- Header UI ---------------------------------------------*/
-
-.bank-ui-header {
-    background-color:white;
-    width: 100%;
-    height: 80px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header-logo-wrapper {
-    width: 200px;
-    height: 75px;
-    padding-left: 15px;
-}
-
-.header-logo-wrapper img {
-    width: 100%;
-    height: 100%;
-}
-
-.header-hour-wrapper {
-    width: 100px;
-    height: 55px;
-    padding-right: 120px;
-}
-
-.header-hour-wrapper span{
-    font-size: 43px;
-}
-
-.header-quit-wrapper {
-    width: 45px;
-    height: 45px;
-    padding-right: 15px;
-    cursor: pointer;
-}
-
-.header-quit-wrapper img {
-    width: 100%;
-    height: 100%;
-}
-
-/* -------------------------------------------- Welcome Content UI --------------------------------------------*/
-.bank-ui-welcome-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-
-.content-welcome-text {
-    color: white;
-    font-size: 28px;
-    padding: 25px 0px;
-}
-
-.content-user-balance-wrapper {
-    width: 100%;
-    display: flex;
-    color: white;
-    justify-content: space-between;
+.btn {
+    width: 236px;
+    height: 77px;
+    font-family: "vision-heavy", sans-serif;
     font-size: 22px;
-}
-
-.account-balance-span {
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    display: flex;
     padding-left: 20px;
 }
 
-.available-balance-span {
-    padding-right: 20px;
+.btn .icon {
+    line-height: 38px;
+    margin-right: 20px;
 }
 
-.content-actions-wrapper {
-    display: flex;
-    padding: 85px;
+.btn span:last-child {
+    font-size: 15px;
+    font-family: "bariol", sans-serif;
+    text-transform: none;
 }
 
-.content-action-box-wrapper {
-    width: 250px;
-    height: 265px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-    margin-right: 10px;
+.btn i {
+    position: absolute;
+    transform: rotate(10deg);
+    font-size: 130px;
+    left: -19%;
+    top: -34%;
+    opacity: 0.1;
+    transition-duration: 0.3s;
+}
+
+.btn-blue {
+    background: #3a93e5;
+}
+
+.btn-blue span:last-child {
+    color: #14416a;
+}
+
+.btn-violet {
+    background: #a555e9;
+}
+
+.btn-violet span:last-child {
+    color: #380f5a;
+}
+
+.btn-orange {
+    background: #e5873b;
+}
+
+.btn-orange span:last-child {
+    color: #5b2c06;
+}
+
+.btn-green {
+    background: #7cb732;
+}
+
+.btn-green span:last-child {
+    color: #3a5d0d;
+}
+
+.btn-grey {
+    background: #a0a0a0;
+}
+
+.btn-grey span:last-child {
+    color: #333435;
+}
+
+.btn:hover i {
+    transform: rotate(0deg);
+    font-size: 150px;
+}
+
+/*######################################################*/
+/* ###############        TOP BAR        ###############*/
+/*######################################################*/
+.topbar {
+    background: linear-gradient(to right, #c8db2b, #268f3a);
+    height: 59px;
+    width: 100%;
     display: flex;
-    flex-flow: column;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.parale-1 {
+    width: 460px;
+    height: 120px;
+    -webkit-transform: skew(33deg);
+    -moz-transform: skew(33deg);
+    -o-transform: skew(33deg);
+    tranform: skew(33deg);
+    background: white;
+    opacity: 0.2;
+}
+
+.cont-p-1 {
+    transform: rotate(-11deg);
+    position: absolute;
+    left: -281px;
+    top: -23px;
+}
+
+.parale-2 {
+    width: 430px;
+    height: 120px;
+    -webkit-transform: skew(33deg);
+    -moz-transform: skew(33deg);
+    -o-transform: skew(33deg);
+    tranform: skew(33deg);
+    background: white;
+    opacity: 0.2;
+}
+
+.cont-p-2 {
+    transform: rotate(-10deg);
+    position: absolute;
+    left: 176px;
+    top: -80px;
+}
+
+.parale-3 {
+    width: 200px;
+    height: 60px;
+    -webkit-transform: skew(33deg);
+    -moz-transform: skew(33deg);
+    -o-transform: skew(33deg);
+    tranform: skew(33deg);
+    background: white;
+    opacity: 0.2;
+}
+
+.cont-p-3 {
+    transform: rotate(-10deg);
+    position: absolute;
+    left: 720px;
+    top: 25px;
+}
+
+nav {
+    width: calc(100% - 40px);
+    display: flex;
     justify-content: space-between;
-    font-size: 45px;
-    transition: background-color 0.5s;
+    padding: 0 20px;
+    z-index: 1;
 }
 
-.content-action-box-wrapper:hover {
-    background-color: rgb(219, 219, 219);
+.btn-sign-out {
+    color: white;
+    background: rgba(0, 0, 0, 0);
+    font-size: 20px;
+    font-family: "bariol", sans-serif;
 }
 
-.content-action-box-wrapper img{
-    padding-bottom: 20px;
+.btn-sign-out i {
+    font-size: 15px;
+    margin-left: 20px;
+    transition-duration: 0.3s;
 }
 
-.content-action-box-wrapper span {
-    padding-top: 20px;
+.btn-sign-out:hover i {
+    margin-left: 10px;
 }
 
-.withdraw-icon {
-    width: 40px;
-    height: 40px;
+.logo-topbar {
+    height: 32px;
+    width: 108px;
+    background-image: url(../../assets/images/bank-ui/logo-top.png);
+    background-repeat: no-repeat;
 }
 
-.transfer-icon {
-    width: 50px;
+/*######################################################*/
+/* ###############       MAIN MENU       ###############*/
+/*######################################################*/
+.balance {
+    width: 403px;
+    height: 183px;
+    background: white;
+    margin-right: 60px;
+    margin-bottom: 60px;
+    padding: 40px;
+    color: #414141;
+    font-size: 16px;
+    background-image: url(../../assets/images/bank-ui/curve.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.balance .name {
+    font-size: 25px;
+    color: #a9cc2e;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.balance .money {
+    font-size: 60px;
+    color: #28903a;
+    font-family: "vision-heavy", sans-serif;
+}
+
+.balance .money .dollars {
+    color: #e1e0e0;
+}
+
+.list-btn {
+    height: 263px;
+    width: 236px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.pub {
+    width: 360px;
+    height: 98px;
+    background: white;
+    position: relative;
+}
+
+.confiance {
+    margin-right: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.confiance p {
+    width: 235px;
+    color: #7e7e7e;
+    font-size: 16px;
+    margin: 25px 0 0 20px;
+}
+
+.confiance p span {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #181818;
+    font-family: "vision-heavy", sans-serif;
+}
+
+.circle-confiance {
+    width: 75px;
+    height: 75px;
+    background-image: url(../../assets/images/bank-ui/circle.png);
+    margin: 11px;
+}
+
+.social {
+    background: transparent;
+}
+
+.social button {
+    width: 100%;
+    height: 100%;
+}
+
+.graph {
+    width: 275px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin-top: 15px;
+    margin-left: 16px;
+}
+
+/*######################################################*/
+/* ###############     WITHDRAW MENU      ###############*/
+/*######################################################*/
+
+.banniere {
+    width: 464px;
+    margin-right: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form {
+    margin-top: 60px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: #414141;
+    font-family: "bariol", sans-serif;
+}
+
+.input-cont {
+    width: 720px;
+    height: 87px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin-bottom: 60px;
+}
+
+.input-cont input {
+    width: 100%;
     height: 50px;
-    padding-bottom: 15px !important;
+    text-align: center;
+    border: 0;
+    font-size: 60px;
+    color: #28903a;
+    font-family: "vision-heavy", sans-serif;
 }
 
-.deposit-icon {
+.input-cont input::-webkit-input-placeholder {
+    color: #7cb732;
+}
+
+.double-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.double-input .input-cont {
+    width: 300px;
+}
+
+.double-input input {
+    font-size: 35px;
+}
+
+/*######################################################*/
+/* ###############        WAITING        ###############*/
+/*######################################################*/
+.bg-waiting {
+    width: 1000px;
+    height: 450px;
+    background: linear-gradient(to right, #d8ed2e, #268f3a);
+    position: relative;
+    transform: rotate(-8deg);
+    top: -70px;
+    left: -70px;
+}
+
+.mainlogo {
+    margin: auto;
+    width: 320px;
+    height: 95px;
+    background-image: url(../../assets/images/bank-ui/logo-big.png);
+    background-repeat: no-repeat;
+    margin-top: 70px;
+}
+
+.content-waiting p {
+    margin-top: 70px;
+}
+
+.content-waiting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    width: 410px;
+    position: absolute;
+    left: 50%;
+    text-align: center;
+    margin-left: -205px;
+    font-size: 30px;
+    color: white;
+}
+
+.content-waiting span {
+    color: #414141;
+}
+
+#fingerprint-content {
+    position: relative;
+    margin: auto;
+    margin-top: 127px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #eaeaea;
+    cursor: pointer;
+    overflow: hidden;
+    transition-duration: 0.2s;
+}
+
+#fingerprint-content:hover {
+    border: 4px solid #7cb732;
+}
+
+.fingerprint-default {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-image: url(../../assets/images/bank-ui/fingerprint.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    opacity: 0.2;
+    transition-duration: 1.2s;
+}
+
+.fingerprint-active {
+    position: absolute;
+    width: 120px;
+    height: 0px;
+    background-image: url(../../assets/images/bank-ui/fingerprint.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition-duration: 1.2s;
+    bottom: 0;
+}
+
+.fingerprint-active.active {
+    height: 120px;
+}
+
+.fingerprint-bar {
+    width: 126px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #a5a5a5;
+    position: absolute;
+    bottom: -3px;
+    transition-duration: 1.2s;
+}
+
+.fingerprint-bar.active {
+    bottom: 123px;
+}
+
+.parale-4 {
+    width: 627px;
+    height: 150px;
+    -webkit-transform: skew(33deg);
+    -moz-transform: skew(33deg);
+    -o-transform: skew(33deg);
+    tranform: skew(33deg);
+    background: white;
+    opacity: 0.1;
+}
+
+.cont-p-4 {
+    transform: rotate(-1deg);
+    position: absolute;
+    left: -35px;
+    top: -25px;
+}
+
+.parale-5 {
+    width: 397px;
+    height: 70px;
+    -webkit-transform: skew(33deg);
+    -moz-transform: skew(33deg);
+    -o-transform: skew(33deg);
+    tranform: skew(33deg);
+    background: white;
+    opacity: 0.1;
+}
+
+.cont-p-5 {
+    transform: rotate(-1deg);
+    position: absolute;
+    left: 830px;
+    top: 98px;
+}
+
+.parale-6 {
+    width: 397px;
+    height: 70px;
+    -webkit-transform: skew(33deg);
+    -moz-transform: skew(33deg);
+    -o-transform: skew(33deg);
+    tranform: skew(33deg);
+    background: white;
+    opacity: 0.1;
+}
+
+.cont-p-6 {
+    transform: rotate(-1deg);
+    position: absolute;
+    left: -28px;
+    top: 366px;
+}
+
+.parale-7 {
+    width: 397px;
+    height: 70px;
+    -webkit-transform: skew(33deg);
+    -moz-transform: skew(33deg);
+    -o-transform: skew(33deg);
+    tranform: skew(33deg);
+    background: white;
+    opacity: 0.1;
+}
+
+.cont-p-7 {
+    transform: rotate(-1deg);
+    position: absolute;
+    left: 272px;
+    top: 416px;
+}
+
+#result {
+    position: absolute;
+    top: 20px;
+    width: 820px;
+    padding: 25px 40px;
+    font-size: 16px;
+    color: white;
+}
+
+.alert-green {
+    background: #7cb732;
+}
+
+.alert-orange {
+    background: #e5873b;
+}
+
+.loader {
+    border: 4px solid #f9f9f9;
+    border-top: 4px solid #268f3a;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
+    animation: spin 1s linear infinite;
 }
 
-/* -------------------------------------------- Withdraw/Deposit Content UI --------------------------------------------*/
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
 
-.deposit-small-span {
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
+#error, #spinner {
+    display: none;
 }

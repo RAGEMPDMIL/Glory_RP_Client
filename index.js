@@ -13,7 +13,7 @@ require('./DM_IL_Client/player/hud/events/hud-events');
 require('./DM_IL_Client/player/player-blip/player-blip');
 
 // Bank Money System
-require('./DM_IL_Client/bank-money-system/events/events');
+require('./DM_IL_Client/bank-money-system/events/bank-money-system-events');
 
 // Gun System
 require('./DM_IL_Client/gun-system/peds/peds');
