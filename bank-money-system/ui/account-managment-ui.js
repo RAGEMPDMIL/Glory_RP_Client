@@ -11,7 +11,7 @@ $(document).ready(function () {
     });
 
     $('.back').click(function () {
-        $('#depositUI, #withdrawUI, #transferUI').hide();
+        $('#depositUI, #withdrawUI, #transferUI, #spinner, #error').hide();
         $('#general').show();
 
         $("#transfer-error").css('color', 'unset');
